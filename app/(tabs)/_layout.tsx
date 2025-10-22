@@ -1,33 +1,60 @@
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+import {  TabList, TabTrigger, TabSlot } from 'expo-router/ui';
 import { Tabs } from 'expo-router';
+import { faHouse, faUser } from '@fortawesome/free-solid-svg-icons'; // This line is causing the error
+import { Text, View } from 'react-native'
 import React from 'react';
 
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
+        tabBarShowLabel: false,
+        tabBarStyle: {
+          backgroundColor: 'white',
+          borderTopWidth: 1,
+          borderTopColor: '#E5E7EB',
+          height: 60,
+        },
+      }}
+    >
       <Tabs.Screen
-        name="index"
+        name="home"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          tabBarIcon: ({ focused }) => (
+            <View className="items-center justify-center mt-5">
+              <FontAwesome
+                icon={faHouse as any} 
+                size={22} 
+                color={focused ? 'rgba(255, 237, 132, 1)' : '#6b7280'}
+              />
+              <Text 
+                className={`text-xs mt-1 ${focused ? 'text-yellow-300' : 'text-gray-500'}`}
+              >
+                Home
+              </Text>
+            </View>
+          ),
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="profile"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          tabBarIcon: ({ focused }) => (
+            <View className="items-center justify-center mt-5 ">
+              <FontAwesome
+                icon={faUser} 
+                size={22} 
+                color={focused ? 'rgba(255, 237, 132, 1)' : '#6b7280'}
+              />
+              <Text 
+                className={`text-xs mt-1 ${focused ? 'text-yellow-300' : 'text-gray-500'}`}
+              >
+                Profile
+              </Text>
+            </View>
+          ),
         }}
       />
     </Tabs>
