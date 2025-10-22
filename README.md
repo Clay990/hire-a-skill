@@ -1,50 +1,60 @@
-# Welcome to your Expo app 👋
+# Hire-a-Skill 🤝
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**Hire-a-Skill** is a mobile marketplace built with React Native and Firebase, designed to connect users with local individuals offering their skills, time, and companionship.
 
-## Get started
+Unlike traditional rental apps that focus on "things," this project's unique focus is on the **human element**. It's a platform for hiring a photographer for an hour, finding a "foodie buddy" to explore new restaurants, or booking a local guitar tutor.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## 📸 Project Demo
 
-2. Start the app
+*(TODO: Record a GIF (using tools like GIPHY Capture) showing user auth, profile creation, browsing, and the chat feature.)*
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## ✨ Core Features
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+* **🛡️ Secure Authentication:** Users can sign up or log in easily using their **Email & Password** or **Phone Number** (via Firebase Auth).
+* **👤 Service Provider Profiles:** Users can switch to a "Provider" profile to market their skills. This includes:
+    * A gallery of their work/photos.
+    * A list of skills they offer (e.g., "Photography," "Tutoring," "Event Help").
+    * Their set **price per hour**.
+* **🗺️ Location-Based Browsing:** The home screen features a beautiful grid/list of available providers, which users can **search and filter** based on skill and location. This is powered by `expo-location` to find buddies nearby.
+* **💬 Real-Time In-App Chat:** This is the app's killer feature! Built with **Firebase (Firestore)**, any user can tap on a provider's profile and instantly start a real-time chat to ask questions, negotiate terms, or finalize a booking.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 🚀 Why This Project?
 
-When you're ready, run:
+This app was built as a comprehensive portfolio project to demonstrate a full-stack "social" application. It proves proficiency in:
+
+* **Complex State Management:** Handling user auth status, profiles, and real-time chat messages.
+* **Full-Stack Integration:** Connecting a React Native frontend with a powerful BaaS (Backend as a Service) like Firebase.
+* **Real-Time Capabilities:** Implementing a core feature (chat) that requires real-time data synchronization.
+* **Native API Usage:** Accessing device hardware like GPS for location-based searching.
+
+---
+
+## 🛠️ Tech Stack
+
+* **Frontend:** [React Native](https://reactnative.dev/) (managed with [Expo](https://expo.dev/))
+* **Backend & Database:** [Firebase](https://firebase.google.com/)
+    * **Firebase Authentication** (for Email & Phone)
+    * **Firestore** (for user profiles, skill listings, and chat messages)
+    * **Firebase Storage** (for profile pictures and gallery images)
+* **Navigation:** [React Navigation](https://reactnavigation.org/)
+* **Location:** `expo-location`
+* **Form Handling:** (e.g., [Formik](https://formik.org/) or [React Hook Form](https://react-hook-form.com/))
+* **Styling:** React Native Stylesheet
+
+---
+
+## ⚙️ Getting Started
+
+To clone and run this project locally, you will need [Node.js](https://nodejs.org/en/) and [Git](https://git-scm.com/) installed on your computer.
+
+### 1. Clone the Repository
 
 ```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+git clone https://github.com/Clay990/hire-a-skill.git
+cd hire-a-skill
