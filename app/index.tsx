@@ -11,7 +11,7 @@ export default function index() {
           
           // Navigate after signing in. You may want to tweak this to ensure sign-in is
           // successful before navigating.
-          router.replace('/(tabs)/home');
+          router.replace('/login');
         }}>
         Sign In
       </Text>
